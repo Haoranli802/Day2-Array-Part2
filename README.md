@@ -10,3 +10,5 @@
 binary search: 先创造一个记录nums不断攀升的sum的array，然后遍历nums找到每个数字加上target对应的end位置，然后算subarray的长度。
 
 59.螺旋矩阵II 
+
+理解需要while循环的次数loop和每条边坚持左闭右开。
