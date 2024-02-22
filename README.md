@@ -7,6 +7,6 @@
 
 滑动窗口
 
-binary search
+binary search: 先创造一个记录nums不断攀升的sum的array，然后遍历nums找到每个数字加上target对应的end位置，然后算subarray的长度。
 
 59.螺旋矩阵II 
