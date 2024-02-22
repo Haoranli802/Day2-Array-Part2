@@ -74,3 +74,41 @@ class Solution {
     }
 }
 // binarySearch Time: O(NlogN) Space: O(N)
+
+//LeetCode 59
+
+class Solution {
+    public int[][] generateMatrix(int n) {
+        int[][] res = new int[n][n];
+        int loop = 0;
+        int start = 0;
+        int count = 1;
+        int i, j;
+        while (loop++ < n / 2) { // 判断边界后，loop从1开始
+            // 模拟上侧从左到右
+            for (j = start; j < n - loop; j++) {
+                res[start][j] = count++;
+            }
+
+            // 模拟右侧从上到下
+            for (i = start; i < n - loop; i++) {
+                res[i][j] = count++;
+            }
+
+            // 模拟下侧从右到左
+            for (; j >= loop; j--) {
+                res[i][j] = count++;
+            }
+
+            // 模拟左侧从下到上
+            for (; i >= loop; i--) {
+                res[i][j] = count++;
+            }
+            start++;
+        }
+        if(n % 2 == 1) res[start][start] = count;
+        return res;
+    }
+}
+//Time: O(N^2) Space: O(1)
+
